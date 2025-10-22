@@ -1,0 +1,82 @@
+/* Модалка настройки высоты холста */
+#ch-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+#ch-modal {
+  width: min(520px, 92vw);
+  background: #0f1622;
+  color: #e6f0fa;
+  border: 1px solid #223046;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.3);
+  padding: 18px 18px 16px;
+}
+
+#ch-modal h3 {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#ch-row {
+  display: grid;
+  grid-template-columns: 1fr 86px;
+  gap: 12px;
+  align-items: center;
+  margin: 8px 0 10px;
+}
+
+#ch-range {
+  width: 100%;
+}
+
+#ch-num {
+  width: 86px;
+  height: 34px;
+  background: #0e141b;
+  color: #e6f0fa;
+  border: 1px solid #253247;
+  border-radius: 8px;
+  padding: 0 10px;
+  font: 14px/32px system-ui, Segoe UI, Roboto;
+  text-align: right;
+}
+
+#ch-foot {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+#ch-foot .btn {
+  padding: 8px 12px;
+  background: #20314a;
+  color: #e6f0fa;
+  border: 1px solid #2b3c56;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#ch-foot .btn:hover { background:#273a58; }
+#ch-foot .ghost { background: transparent; border-color:#2b3c56; }
+#ch-foot .ghost:hover { background:#172132; }
+
+/* Кнопка в тулбаре редактора (чтобы совпадало по стилю) */
+.btn-ch {
+  margin-left: 4px;
+}
+
+/* CSS‑переменные для высоты сцены в редакторе */
+:root {
+  /* храним сразу строковые значения (с единицами), чтобы использовать напрямую в CSS */
+  --canvas-ratio-desktop: 125vw;
+  --canvas-ratio-tablet: 195.3125vw; /* 1500/768*100 */
+  --canvas-ratio-mobile: 1500px;
+}
